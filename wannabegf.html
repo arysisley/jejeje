@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres Ser Mi Novia?</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 50px;
+            color: #333;
+        }
+
+        #message {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        #question-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #question-button:hover {
+            background-color: #2980b9;
+        }
+
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #3498db;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        #popup p {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        #close-button {
+            cursor: pointer;
+            color: #3498db;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        #close-button:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="message">
+        <p>Cami, como siempre te lo he dicho, te quise desde el primer momento que te vi. Estoy muy agradecido contigo por darme la oportunidad de conocerte y darme cuenta de lo increíble que eres. Me encanta todo de ti. Cada detalle de ti me enamora, tu bondad, inteligencia, tu belleza y todas las cualidades admirables que te conforman. Estoy muy agradecido de poder ser correspondido por ti.</p>
+    </div>
+
+    <button id="question-button" onclick="askQuestion()">Haz clic para preguntar</button>
+
+    <div id="popup">
+        <p>¡Felicidades! 🎉 Ella dijo que sí.</p>
+        <p id="close-button" onclick="closePopup()">Cerrar</p>
+    </div>
+
+    <script>
+        function askQuestion() {
+            var answer = confirm("¿Quieres ser mi novia?");
+            if (answer) {
+                openPopup();
+            }
+        }
+
+        function openPopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+        }
+
+        function closePopup() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
